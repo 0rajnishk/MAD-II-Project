@@ -1,0 +1,4 @@
+env
+node_modules
+mad 2 backend/__queuestorage__
+mad 2 backend/backend/__pycache__
