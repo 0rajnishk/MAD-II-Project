@@ -40,6 +40,11 @@ To run the Music App, you'll need:
     ```bash
     celery -A backend.celery worker --loglevel=info
     ```
+4. Start the Celery beat:
+
+    ```bash
+    celery -A backend.celery beat --loglevel=info
+    ```
 
 ### Frontend (Vue.js)
 
