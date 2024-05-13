@@ -3,7 +3,7 @@
         <h2>Login</h2>
 
         <form @submit.prevent="submitForm" class="form">
-            <!-- Use v-model directly on formData properties -->
+            
             <input type="text" placeholder="email" v-model="formData.email" />
             <input type="password" placeholder="Password" v-model="formData.password" />
             <button type="submit">Sign in</button>
@@ -67,7 +67,6 @@ export default {
     height: 40px;
     border-radius: 5px;
     outline: 0;
-    -moz-outline-style: none;
 }
 
 .login-wrap input[type="text"],

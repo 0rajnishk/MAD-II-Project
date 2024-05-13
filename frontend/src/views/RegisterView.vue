@@ -2,7 +2,7 @@
 
 <template>
   <div class="register">
-    <RegistrationForm @register="handleRegistration" />
+    <RegistrationForm @signup="handleSignup" />
   </div>
 </template>
 
@@ -20,21 +20,24 @@ export default {
     };
   },
   methods: {
-    handleRegistration(formData) {
-      axios.post("http://127.0.0.1:8000/api/users", formData)
-        .then(response => {
+    async handleSignup(formData) {
+      try {
+        const response = await axios.post("http://127.0.0.1:8000/api/users", formData);
 
-          if (response.status === 201) {
-            // Registration successful
-            alert("Registration successful!");
-            this.$router.push('/login');
+        if (response.status === 201) {
+          alert(JSON.stringify(response.data.msg));
+          this.$router.push('/login');
+        } else {
+          if (response.status === 409) {
+            alert("User already exists. Please choose a different email.");
+          } else {
+            alert("An error occurred. Please try again.");
           }
-
-        })
-        .catch(error => {
-          // Handle error
-          console.error(error);
-        });
+        }
+      } catch (error) {
+        alert('Error occurred while signing up');
+        console.error(error);
+      }
     },
   },
 };

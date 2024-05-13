@@ -30,17 +30,23 @@ export default {
           // Extract the token from the response
         const resp = response.data
          if (resp.status == true){
-          const token = resp.access_token;
+           const token = resp.access_token;
           const user = resp.user;
-            alert(token)
-          localStorage.setItem('token', token);
-          localStorage.setItem('user', JSON.stringify(user));
-          if (user.isAdmin === true) {
-            this.$router.push('/admin');
-          } else {
-            this.$router.push('/');
-          }
+            console.log(token)
 
+           const roleNames = user.roles.map(role => role.role);
+           if (roleNames.includes('Creator')) {
+             localStorage.setItem('token', token);
+             localStorage.setItem('user', JSON.stringify(user));
+             localStorage.setItem('role','creator');
+             this.$router.push('/');
+           } else if (roleNames.includes('user')) {
+             localStorage.setItem('token', token);
+             localStorage.setItem('user', JSON.stringify(user));
+             localStorage.setItem('role', 'user');
+             this.$router.push('/');
+           } else{
+             alert("You are not a creator or user")}
         } else {
            console.log(response.data.error)
         }

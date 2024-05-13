@@ -1,6 +1,6 @@
 <template>
     <!-- FOOTER  -->
-    <footer>
+    <footer class="flex-1 p-4 left-m bg-gradient-to-r from-midnight-blue to-sunset-orange" id="footer">
         <!-- SUB FOOTER -->
         <div class="bg-gradient-to-r from-midnight-blue to-sunset-orange text-center p-16">
             <div class="bg-gradient-to-r from-midnight-blue to-sunset-orange text-center p-16">
@@ -71,7 +71,7 @@
         </div>
 
         <!-- FOOTER -->
-        <div class="bg-black text-gray-700 p-8 flex flex-col md:flex-row justify-between">
+        <div class="bg-black text-gray-700 p-10 flex flex-col md:flex-row justify-between">
             <!-- Column 1 -->
             <div class="footer-column mb-8 md:mb-0">
                 <div>
@@ -153,15 +153,15 @@
             <div class="footer-column">
                 <div>
                     <!-- APP STORE & PLAY STORE -->
-                    <img src="../assets/img/app-store-badge-white.png.png" alt="" class="mb-2">
-                    <img src="../assets/img/google-play-badge-white.png.png" alt="" class="mb-2">
+                    <!-- <img src="../assets/img/app-store-badge-white.png.png" alt="" class="mb-2">
+                    <img src="../assets/img/google-play-badge-white.png.png" alt="" class="mb-2"> -->
                     <div class="flex items-center">
                         <!-- FB, INSTA, TWITTER, PINTEREST, DRIBBLE -->
-                        <img src="../assets/img/twitter.svg" alt="" class="mr-2">
+                        <!-- <img src="../assets/img/twitter.svg" alt="" class="mr-2">
                         <img src="../assets/img/youtube.svg" alt="" class="mr-2">
                         <img src="../assets/img/instagram.svg" alt="" class="mr-2">
                         <img src="../assets/img/pinterest.svg" alt="" class="mr-2">
-                        <img src="../assets/img/dribble.svg" alt="" class="mr-2">
+                        <img src="../assets/img/dribble.svg" alt="" class="mr-2"> -->
                     </div>
                     <p class="inline-block mt-2 text-sm text-gray-300">
                         <a href="" class="md:inline-block md:whitespace-nowrap md:mr-0 hover:underline  ">The Music</a>
@@ -179,3 +179,4 @@ export default {
     name: 'App',
 }
 </script>
+

@@ -1,0 +1,373 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Song API
+  
+tags:
+  - name: Users songs
+    description: Endpoints related to users' songs
+  - name: Single Song
+    description: Endpoints related to a single song
+  - name: Albums
+    description: Endpoints related to albums
+  - name: Album
+    description: Endpoints related to single album
+  - name: Admin Albums
+    description: Endpoints related to admin albums
+  
+paths:
+  /songs:
+    get:
+      tags:
+        - Users songs
+      description: Retrieve all songs
+      security:
+        - role_required: []
+      responses:
+        200:
+          description: Successful operation
+    post:
+      tags:
+        - Users songs
+      description: Create a new song (can only be accessed by creators)
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              image:
+                type: string
+              audio_file:
+                type: string
+      responses:
+        201:
+          description: Song created successfully
+        400:
+          description: Error occurred while creating song
+    delete:
+      tags:
+        - Users songs
+      description: Delete a song (can only be accessed by creators and admin)
+      parameters:
+        - name: song_id
+          in: query
+          required: true
+          type: string
+      responses:
+        200:
+          description: Song deleted successfully
+        404:
+          description: Song not found
+        403:
+          description: You are not authorized to delete this song
+  /songs/{song_id}:
+    get:
+      tags:
+        - Single Song
+      description: Retrieve a specific song
+      parameters:
+        - name: song_id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful operation
+        404:
+          description: Song not found
+    put:
+      tags:
+        - Single Song
+      description: Update a specific song
+      parameters:
+        - name: song_id
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              singer:
+                type: string
+              genre:
+                type: string
+              audio_file:
+                type: string
+              image:
+                type: string
+              lyrics:
+                type: string
+              album_id:
+                type: integer
+      responses:
+        200:
+          description: Song updated successfully
+        400:
+          description: Error occurred while updating song
+        404:
+          description: Song not found
+        403:
+          description: You are not authorized to update this song
+    delete:
+      tags:
+        - Single Song
+      description: Delete a specific song
+      parameters:
+        - name: song_id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Song deleted successfully
+        404:
+          description: Song not found
+        403:
+          description: You are not authorized to delete this song
+        400:
+          description: Error occurred while deleting song
+  /albums:
+    get:
+      tags:
+        - Albums
+      description: Retrieve all albums
+      # security:
+      #   - role_required: ['user','Creator', 'admin']
+      responses:
+        200:
+          description: Successful operation
+    post:
+      tags:
+        - Albums
+      description: Create a new album (can only be accessed by creators)
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                # required: true
+              singer:
+                type: string
+              genre:
+                type: string
+      responses:
+        201:
+          description: Album created successfully
+        400:
+          description: Error occurred while creating album
+  /albums/{album_id}:
+    get:
+      tags:
+        - Album
+      description: Retrieve songs of a specific album
+      parameters:
+        - name: album_id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful operation
+        404:
+          description: Album not found
+    put:
+      tags:
+        - Album
+      description: Update a specific album
+      parameters:
+        - name: album_id
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              singer:
+                type: string
+              genre:
+                type: string
+      responses:
+        200:
+          description: Album updated successfully
+        400:
+          description: Error occurred while updating album
+        404:
+          description: Album not found
+    delete:
+      tags:
+        - Album
+      description: Delete a specific album
+      parameters:
+        - name: album_id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Album deleted successfully
+        404:
+          description: Album not found
+        400:
+          description: Error occurred while deleting album
+
+definitions:
+  Song:
+    type: object
+    properties:
+      name:
+        type: string
+      singer:
+        type: string
+      genre:
+        type: string
+      audio_file:
+        type: string
+      image:
+        type: string
+      lyrics:
+        type: string
+      album_id:
+        type: integer
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+      image:
+        type: string
+      fname:
+        type: string
+      lname:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      password:
+        type: string
+      blacklist:
+        type: boolean
+      roles:
+        type: array
+        items:
+          $ref: '#/definitions/Role'
+      liked_songs:
+        type: array
+        items:
+          $ref: '#/definitions/Song'
+    required:
+      - fname
+      - lname
+      - email
+      - phone
+      - password
+
+  Role:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    required:
+      - name
+
+  Album:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      singer:
+        type: string
+      genre:
+        type: string
+      user_id:
+        type: integer
+      songs:
+        type: array
+        items:
+          $ref: '#/definitions/Song'
+
+  Playlist:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      user_id:
+        type: integer
+      songs:
+        type: array
+        items:
+          $ref: '#/definitions/Song'
+
+  SongRating:
+    type: object
+    properties:
+      id:
+        type: integer
+      user_id:
+        type: integer
+      song_id:
+        type: integer
+      rating:
+        type: integer
+
+  RecentlyPlayedSongs:
+    type: object
+    properties:
+      id:
+        type: integer
+      song_id:
+        type: integer
+      user_id:
+        type: integer
+      timestamp:
+        type: string
+    required:
+      - song_id
+      - user_id
+      - timestamp
+
+  ReportedSong:
+    type: object
+    properties:
+      id:
+        type: integer
+      song_id:
+        type: integer
+      user_id:
+        type: integer
+      reason:
+        type: string
+      timestamp:
+        type: string
+    required:
+      - song_id
+      - user_id
+      - reason
+
+securityDefinitions:
+  role_required:
+    type: apiKey
+    name: Authorization
+    in: header

@@ -21,9 +21,22 @@
             <router-link to="/">
                 <li class="mx-4 my-4 md:my-0" cursor-pointer>Home</li>
             </router-link>
-            <router-link to="/dashboard">
-                <li class="mx-4 my-4 md:my-0" cursor-pointer>Dashboard</li>
-            </router-link>
+
+            <div v-if="!showDashboard">
+
+                <li @click="becomeCreator()" class="mx-4 my-4 md:my-0 cursor-pointer">Become creator</li>
+
+            </div>
+            <div v-if="showDashboard">
+                <router-link to="/dashboard">
+                    <li class="mx-4 my-4 md:my-0 cursor-pointer">Dashboard</li>
+                </router-link>
+            </div>
+
+
+
+
+
             <li class="mx-4 my-4 md:my-0">
             </li>
             <a v-if="!isLoggedIn" href="/login">
@@ -41,6 +54,8 @@
             </a>
         </ul>
     </nav>
+    <br>
+    <br>
 </template>
 
 <script>
@@ -49,31 +64,76 @@ export default {
         return {
             isMobileMenuOpen: false,
             isDropdownOpen: false,
+            role: null,
+            showDashboard: false,
         };
     },
     computed: {
         isLoggedIn() {
-            // Check if the user details exist in local storage
             const user = localStorage.getItem('user');
             return user !== null;
         },
+
     },
     methods: {
         toggleMobileMenu() {
             this.isMobileMenuOpen = !this.isMobileMenuOpen;
             // this.toggleDropdown();
         },
+        checkRole() {
+            const role = localStorage.getItem('role');
+            if (role === 'creator'){
+                this.showDashboard = true;
+            };
+            if (role === 'admin'){
+                this.$router.push('/admin')
+            }
+        },
         toggleDropdown() {
             console.log('Dropdown');
             this.isDropdownOpen = !this.isDropdownOpen;
         },
         logout() {
-            // Remove the token and user from local storage
             localStorage.removeItem('token');
             localStorage.removeItem('user');
-            // Redirect to the home page
-            this.$router.push('/login');
+            if (localStorage.getItem('role') === 'creator') {
+                localStorage.removeItem('role');
+                this.$router.push('/login');
+            } else if (localStorage.getItem('admin') === 'admin'){
+                localStorage.removeItem('role')
+                this.$router.push('/adminlogin')
+            } else {
+                localStorage.removeItem('role')
+                this.$router.push('/')
+            }
+            
+        },
+        async becomeCreator() {
+            const token = localStorage.getItem('token');
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/update_role', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + token,
+                    }
+                });
+                if (response.status) {
+                    this.showDashboard = true;
+                    localStorage.setItem('role', 'creator');
+                    alert(response.msg)
+                }
+            } catch (error) {
+                console.error('Error fetching rating:', error);
+            }
         },
     },
+    mounted() {
+        if (!this.isLoggedIn) {
+            this.$router.push('/login');
+        }
+        this.checkRole();
+    },
+
 };
 </script>

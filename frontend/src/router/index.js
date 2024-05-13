@@ -18,7 +18,16 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue')
-      // component: () => import('../components/Login-Signup/LoginMobile.vue')
+    },
+    {
+      path: '/admin',
+      name: 'adminDashboard',
+      component: () => import('../views/AdminDashboard.vue')
+    },
+    {
+      path: '/adminlogin',
+      name: 'adminlogin',
+      component: () => import('../components/admin/AdminLogin.vue')
     },
     {
       path:'/register',
@@ -31,15 +40,41 @@ const router = createRouter({
       component: () => import('../views/DashboardView.vue')
     },
     {
-      path:'/adopt',
-      name:'adopt',
-      component: () => import('../views/AdoptView.vue')
-    },
-    {
       path:'/checkout',
       name:'checkout',
       component: () => import('../views/CheckoutView.vue')
-    }
+    },
+    {
+      path: '/play',
+      name: 'audio',
+      component: () => import('../components/AudioPlayer.vue')
+    },
+    {
+      path: '/playlist/:id',
+      name: 'playlist',
+      component: () => import('../views/PlaylistView.vue')
+    },
+    {
+      path: '/search/:query',
+      name: 'search',
+      component: () => import('../views/SearchView.vue')
+    },
+    {
+      path: '/admin/search/:query',
+      name: 'adminsearch',
+      component: () => import('../views/SearchAdminView.vue')
+    },
+    {
+      path: '/album/:id',
+      name: 'album',
+      component: () => import('../views/AlbumView.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFoundView.vue')
+    },
+
   ]
 })
 
