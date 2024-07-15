@@ -106,11 +106,6 @@ This project is licensed under the [MIT License](LICENSE.md).
 
 
 ![Screenshot 1](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/1.jpg)
-![Screenshot 2](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/6.jpg)
-![Screenshot 3](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/7.jpg)
-![Screenshot 4](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/8.png)
-![Screenshot 5](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/9.png)
-
 ![Screenshot 6](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/2.jpg)
 ![Screenshot 7](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/3.jpg)
 ![Screenshot 8](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/4.jpg)
