@@ -4,6 +4,12 @@ The Music App is a modern music streaming application developed as part of the M
 
 [Watch the presentation video](https://drive.google.com/drive/folders/1V0dc_jH9a1kC8haGDKPMDuKxT9YER_XQ?usp=sharing)
 
+![Screenshot 2](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/6.jpg)
+![Screenshot 3](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/7.jpg)
+![Screenshot 4](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/8.jpg)
+![Screenshot 5](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/9.jpg)
+
+
 ## Prerequisites
 
 To run the Music App, you'll need:
@@ -97,7 +103,16 @@ This project is licensed under the [MIT License](LICENSE.md).
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
 
+
+![Screenshot 1](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/1.jpg)
+![Screenshot 2](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/6.jpg)
+![Screenshot 3](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/7.jpg)
+![Screenshot 4](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/8.jpg)
+![Screenshot 5](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/9.jpg)
+
+![Screenshot 6](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/2.jpg)
+![Screenshot 7](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/3.jpg)
+![Screenshot 8](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/4.jpg)
+![Screenshot 9](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/5.jpg)
 
