@@ -1,6 +1,9 @@
 # The Music App (Mad II Project)
 
-The Music App is a modern music streaming application developed as part of the Modern Application Development II (Mad II) also known as Appdev 2 course. It allows users to listen to music, read lyrics, and even contribute as creators by uploading song lyrics and albums.
+The Music App is a modern music streaming application developed as part of the Modern Application Development II (Mad II) course. The project was recognized as the best project in the course for its innovative features and user-friendly design. It allows users to listen to music, read lyrics, and contribute as creators by uploading song lyrics and albums.
+
+## Certificate of Achievement:
+![Screenshot 5](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/certificate.png)
 
 [Watch the presentation video](https://drive.google.com/drive/folders/1V0dc_jH9a1kC8haGDKPMDuKxT9YER_XQ?usp=sharing)
 
