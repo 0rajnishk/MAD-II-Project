@@ -5,6 +5,7 @@ The Music App is a modern music streaming application developed as part of the M
 
 ## Certificate of Achievement:
 [Featured on IITM's page](https://study.iitm.ac.in/student-achievements/projects/MAD2%20Project/2024/Jan%20Term%202024)
+[![Screenshot 5](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/Featured.png)](https://study.iitm.ac.in/student-achievements/projects/MAD2%20Project/2024/Jan%20Term%202024)
 
 ![Screenshot 5](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/certificate.png)
 
