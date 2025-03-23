@@ -4,7 +4,7 @@
 The Music App is a modern music streaming application developed as part of the Modern Application Development II (Mad II) course. The project was recognized as the best project in the course for its innovative features and user-friendly design. It allows users to listen to music, read lyrics, and contribute as creators by uploading song lyrics and albums.
 
 ## Certificate of Achievement:
-[Featured on IITM's page](https://study.iitm.ac.in/student-achievements/projects/MAD2%20Project/2024/Jan%20Term%202024)
+[Featured on IITM's page: click here to visit page](https://study.iitm.ac.in/student-achievements/projects/MAD2%20Project/2024/Jan%20Term%202024)
 [![Screenshot 5](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/Featured.png)](https://study.iitm.ac.in/student-achievements/projects/MAD2%20Project/2024/Jan%20Term%202024)
 
 ![Screenshot 5](https://github.com/0rajnishk/MAD-II-Project/blob/main/screenshots/certificate.png)
